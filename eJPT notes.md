@@ -5,7 +5,19 @@ This guy's notes - https://github.com/saran-gintoki/eJPT-Notes/ <br>
 https://www.kali.org/get-kali/#kali-installer-images <br>
 
 # 1 - Assessment Methodologies 
-## Information Gathering
+## Locate endpoints on a network 
+
+## Identify open ports and services on a target 
+
+## Identify operating system of a target Extract company information from public sources 
+
+## Gather email addresses from public sources Gather technical information from public sources 
+
+## Identify vulnerabilities in services 
+
+## Evaluate information and criticality or impact of vulnerabilities
+
+### Information Gathering
 Tools / web technology identifiers
 Wappalyzer is a cloud-based tool that identifies the technologies used to build websites. It is  the browser plug in built with (recommended)
 whatweb from Kali Linux Tools provides info about the tech used on the website
@@ -20,7 +32,7 @@ Sublist3r can be used to perform a subdomain brute force. | https://github.com/a
 
 DNS footprinting
 dnsrecon is a tool in kali for dns footprinting
-Ex: dnsrecon -d website.com | or dnsdumpster.com (better visual output)  
+dnsrecon -d website.com | or dnsdumpster.com (better visual output)  
 dnsenum is another tool in kali that performs zonetransfers as well.
 
 - sudo dnsenum —enum -f “/usr/share/dnsenum/dns.txt” salesforce.com
@@ -183,22 +195,34 @@ metasploit - auxiliary/scanner/smtp/smtp_version, auxiliary/scanner/smtp/smtp_en
 nmap -sV -script banner 192.80.153.3
 
 # 2 - Host and Networking Auditing
-Compile information from files on target
-Enumerate network information from files on target
-Enumerate system information on target
-Gather user account information on target
-Transfer files to and from target
-Gather hash/password information from target
+## Compile information from files on target
+
+## Enumerate network information from files on target
+
+## Enumerate system information on target
+
+## Gather user account information on target
+
+## Transfer files to and from target
+
+## Gather hash/password information from target
 
 # 3 - Host and Network Penetration Testing
-Identify and modify exploits
-Conduct exploitation with metasploit
-Demonstrate pivoting by adding a route and by port forwarding
-Conduct brute-force password attacks and hash cracking
+## Identify and modify exploits
+
+## Conduct exploitation with metasploit
+
+## Demonstrate pivoting by adding a route and by port forwarding
+
+## Conduct brute-force password attacks and hash cracking
 
 # 4 - Web Application Penetration Testing
-Identify vulnerabilities in web applications
-Locate hidden file and directories
-Conduct brute-force login attack
-Conduct web application reconnaissance
-Gobuster -u [url] -w log.txt dir
+## Identify vulnerabilities in web applications
+
+## Locate hidden file and directories
+
+## Conduct brute-force login attack
+
+## Conduct web application reconnaissance
+
+## Gobuster -u [url] -w log.txt dir
