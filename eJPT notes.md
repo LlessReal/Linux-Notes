@@ -1,8 +1,8 @@
-eLearnSecurity Junior Penetration Tester/eJPT | INE = eLearnSecurity lol <br>
-eJPT Training OFC - https://my.ine.com/ <br>
-Continue Training - https://my.ine.com/INE/learning-paths/61f88d91-79ff-4d8f-af68-873883dbbd8c/penetration-testing-student <br>
-This guy's notes - https://github.com/saran-gintoki/eJPT-Notes/ <br>
-https://www.kali.org/get-kali/#kali-installer-images <br>
+eLearnSecurity Junior Penetration Tester/eJPT | INE = eLearnSecurity lol
+<br> eJPT Training OFC - https://my.ine.com/
+<br> Continue Training - https://my.ine.com/INE/learning-paths/61f88d91-79ff-4d8f-af68-873883dbbd8c/penetration-testing-student
+<br> This guy's notes - https://github.com/saran-gintoki/eJPT-Notes/
+<br> https://www.kali.org/get-kali/#kali-installer-images
 
 # 1 - Assessment Methodologies 
 ## Locate endpoints on a network 
@@ -18,22 +18,22 @@ https://www.kali.org/get-kali/#kali-installer-images <br>
 ## Evaluate information and criticality or impact of vulnerabilities
 
 ### Information Gathering
-Tools / web technology identifiers
-Wappalyzer is a cloud-based tool that identifies the technologies used to build websites. It is  the browser plug in built with (recommended)
-whatweb from Kali Linux Tools provides info about the tech used on the website
-Httrack is a website copier that downloads websites to a local directory
+<br> Tools / web technology identifiers
+<br> Wappalyzer is a cloud-based tool that identifies the technologies used to build websites. It is  the browser plug in built with (recommended)
+<br> whatweb from Kali Linux Tools provides info about the tech used on the website
+<br> Httrack is a website copier that downloads websites to a local directory
 
-netcraft is used to find out what technologies are used by a website | https://sitereport.netcraft.com/
-Builtwith is the same
-robots.txt contains a list of directories that aren’t indexed by search engines
-sitemap.xml does
+<br> netcraft is used to find out what technologies are used by a website | https://sitereport.netcraft.com/
+<br> Builtwith is the same
+<br> robots.txt contains a list of directories that aren’t indexed by search engines
+<br> sitemap.xml does
 
-Sublist3r can be used to perform a subdomain brute force. | https://github.com/aboul3la/Sublist3r
+<br> Sublist3r can be used to perform a subdomain brute force. | https://github.com/aboul3la/Sublist3r
 
-DNS footprinting
-dnsrecon is a tool in kali for dns footprinting
-dnsrecon -d website.com | or dnsdumpster.com (better visual output)  
-dnsenum is another tool in kali that performs zonetransfers as well.
+### DNS footprinting
+<br> dnsrecon is a tool in kali for dns footprinting
+<br> dnsrecon -d website.com | or dnsdumpster.com (better visual output)  
+<br> dnsenum is another tool in kali that performs zonetransfers as well.
 
 - sudo dnsenum —enum -f “/usr/share/dnsenum/dns.txt” salesforce.com
 
@@ -61,10 +61,10 @@ The Whois lookup utility can be used to identify the nameservers of a particular
 ## Footprinting and Scanning
 Identifying the scope of your test can be done via passive/active reconnaissance  
     watch network traffic  
-    **ARP** - resolve ip to mac  
-          arp-scan -I interface -g  
-ICMP is for ping and traceroute 
-fping -I interface -f file.txt -a
+ARP resolves ip to mac  
+<br> arp-scan -I interface -g  
+<br> ICMP is for ping and traceroute 
+<br> fping -I interface -f file.txt -a
 
 netdiscover -i interface -r ippaddrrange
 
