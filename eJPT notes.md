@@ -2,7 +2,9 @@ eLearnSecurity Junior Penetration Tester/eJPT | INE = eLearnSecurity lol <br>
 eJPT Training OFC - https://my.ine.com/ <br>
 Continue Training - https://my.ine.com/INE/learning-paths/61f88d91-79ff-4d8f-af68-873883dbbd8c/penetration-testing-student <br>
 This guy's notes - https://github.com/saran-gintoki/eJPT-Notes/ <br>
-# Assessment Methodologies 
+https://www.kali.org/get-kali/#kali-installer-images <br>
+
+# 1 - Assessment Methodologies 
 ## Information Gathering
 Tools / web technology identifiers
 Wappalyzer is a cloud-based tool that identifies the technologies used to build websites. It is  the browser plug in built with (recommended)
@@ -112,7 +114,7 @@ login bruteforcing
 metasploit - scanner/smb/smb_login  
 hydra - hydra -l username -P file.txt ipaddr smb
 
-## FTP
+### FTP
 
 - ftp ipaddr
 - hydra -L usernamelist -P passwordlist ipaddr ftp
@@ -122,9 +124,7 @@ hydra - hydra -l username -P file.txt ipaddr smb
         nmap ipaddr -p 21 --script ftp-anon
 - metasploit - auxiliaryscanner/ftp/ftp-version, auxiliary/scanner/ftp/ftp_login, auxiliary/scanner/ftp/anonymous
 
-* * *
-
-## SSH
+### SSH
 
 - ssh root@ipaddr
 - nc ipaddr 22
@@ -135,9 +135,7 @@ hydra - hydra -l username -P file.txt ipaddr smb
 - nmap ipaddr -p 22 --script ssh-brute --script-args userdb=usernamefile
 - metasploit -- auxiliary/scanner/ssh/ssh_login, auxiliary/scanner/ssh/ssh_version, auxiliary/scanner/ssh/ssh_enumusers
 
-* * *
-
-## HTTP
+### HTTP
 
 - whatweb ippaddr
 - http ipaddr
@@ -154,7 +152,7 @@ hydra - hydra -l username -P file.txt ipaddr smb
 
 * * *
 
-## SQL - 3306 port
+### SQL 3306
 
 - mysql -h ipaddr -u username
 - select load_file("/etc/shadow"); -- in mysql
@@ -179,8 +177,28 @@ nmap -p 1433 --script ms-sql-query --script-args  mssql.username=admin,mssql.pas
 
 * * *
 
-## SMTP
+### SMTP
 
 metasploit - auxiliary/scanner/smtp/smtp_version, auxiliary/scanner/smtp/smtp_enum
 nmap -sV -script banner 192.80.153.3
 
+# 2 - Host and Networking Auditing
+Compile information from files on target
+Enumerate network information from files on target
+Enumerate system information on target
+Gather user account information on target
+Transfer files to and from target
+Gather hash/password information from target
+
+# 3 - Host and Network Penetration Testing
+Identify and modify exploits
+Conduct exploitation with metasploit
+Demonstrate pivoting by adding a route and by port forwarding
+Conduct brute-force password attacks and hash cracking
+
+# 4 - Web Application Penetration Testing
+Identify vulnerabilities in web applications
+Locate hidden file and directories
+Conduct brute-force login attack
+Conduct web application reconnaissance
+Gobuster -u [url] -w log.txt dir
