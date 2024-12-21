@@ -6,6 +6,13 @@ eLearnSecurity Junior Penetration Tester/eJPT | INE = eLearnSecurity lol
 
 # 1 - Assessment Methodologies 
 ## Locate endpoints on a network 
+Passive Reconnaisance Vs. Active Reconnassiance is self-explanatory now
+### Passive Information Gathering 
+<br> A robots.txt file contains a list of directories that aren’t indexed by search engines
+<br> sitemap.xml does
+<br> whois enumerations works via blah
+<br> netcraft is used to find out what technologies are used by a website | https://sitereport.netcraft.com/
+<br> Sublist3r can be used to perform a subdomain brute force. | https://github.com/aboul3la/Sublist3r
 
 ## Identify open ports and services on a target 
 
@@ -22,14 +29,7 @@ eLearnSecurity Junior Penetration Tester/eJPT | INE = eLearnSecurity lol
 <br> Wappalyzer is a cloud-based tool that identifies the technologies used to build websites. It is  the browser plug in built with (recommended)
 <br> whatweb from Kali Linux Tools provides info about the tech used on the website
 <br> Httrack is a website copier that downloads websites to a local directory
-
-<br> netcraft is used to find out what technologies are used by a website | https://sitereport.netcraft.com/
 <br> Builtwith is the same
-<br> robots.txt contains a list of directories that aren’t indexed by search engines
-<br> sitemap.xml does
-
-<br> Sublist3r can be used to perform a subdomain brute force. | https://github.com/aboul3la/Sublist3r
-
 ### DNS footprinting
 <br> dnsrecon is a tool in kali for dns footprinting
 <br> dnsrecon -d website.com | or dnsdumpster.com (better visual output)  
