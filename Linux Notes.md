@@ -11,7 +11,7 @@ su makes you the super user and allows you to do multiple commands in admin
 <br> yum or yellowdog updater installs, deletes and updates and maanages RPM packages 
 <br> sudo apt install curl - makes installing easier
 
-## Help
+## HELP
 <br> man | brings the manual for help for specific utilities, May be online. You can use grep on the manual.
 <br> whatis [command] explains a command
 
@@ -22,7 +22,7 @@ su makes you the super user and allows you to do multiple commands in admin
 <br> ip route | views the IP routing table 
 <br> ip address add 192.168.121.241/24 dev eth0 coonfigures the IP address of an interface 
 
-## System Info
+## SYSTEM INFO
 <br> df or Disk Free shows info about available space on a file system and also connects a public share drive to a user’s works
 <br> df -h view human readable values of freedom space
 <br> dig (Domain Information Groper) - Detailed domain info (Add dig to Windows)
