@@ -1,16 +1,20 @@
 eLearnSecurity Junior Penetration Tester/eJPT | INE = eLearnSecurity lol
 <br> eJPT Training OFC - https://my.ine.com/
-<br> Continue Training - https://my.ine.com/INE/learning-paths/61f88d91-79ff-4d8f-af68-873883dbbd8c/penetration-testing-student
 <br> This guy's notes - https://github.com/saran-gintoki/eJPT-Notes/
 <br> https://www.kali.org/get-kali/#kali-installer-images
 
 # 1 - Assessment Methodologies 
 ## Locate endpoints on a network 
 Passive Reconnaisance Vs. Active Reconnassiance is self-explanatory now
+<br> whatis [Command] | gives a short description of a command
 ### Passive Information Gathering 
-<br> A robots.txt file contains a list of directories that aren’t indexed by search engines
-<br> sitemap.xml does
+<br> A robots.txt file contains a list of directories that AREN'T indexed by search engines
+<br> Example: https://hackersploit.org/robots.txt
+<br> A sitemap.xml file contains a list of directories that ARE indexed by search engines
+<br> Example: https://hackersploit.org/sitemap_index.xml
 <br> whois enumerations works via blah
+<br> host website.com | Does a DNS Lookup 
+
 <br> netcraft is used to find out what technologies are used by a website | https://sitereport.netcraft.com/
 <br> Sublist3r can be used to perform a subdomain brute force. | https://github.com/aboul3la/Sublist3r
 
@@ -27,8 +31,8 @@ Passive Reconnaisance Vs. Active Reconnassiance is self-explanatory now
 ### Information Gathering
 <br> Tools / web technology identifiers
 <br> Wappalyzer is a cloud-based tool that identifies the technologies used to build websites. It is  the browser plug in built with (recommended)
-<br> whatweb from Kali Linux Tools provides info about the tech used on the website
-<br> Httrack is a website copier that downloads websites to a local directory
+<br> whatweb | Kali Tool that provides info about the tech used on the website
+<br> Httrack | Website copier that downloads websites to a local directory
 <br> Builtwith is the same
 ### DNS footprinting
 <br> dnsrecon is a tool in kali for dns footprinting
@@ -37,9 +41,9 @@ Passive Reconnaisance Vs. Active Reconnassiance is self-explanatory now
 
 - sudo dnsenum —enum -f “/usr/share/dnsenum/dns.txt” salesforce.com
 
-dig - tool in kali to perform zone transfer
-fierce is another tool in kali
-Nslookup is another thing
+dig website.com | Kali tool that's same as host but more raw/detailed and can perform zone transfer
+fierce | Kail tool that is a DNS scanner to help locate non-contiguous IP space and hostnames against specified domains.
+nslookup website.com | same as host (maybe)
 
 zonetransfer.me -- teaches about domain
 
@@ -68,13 +72,13 @@ ARP resolves ip to mac
 
 netdiscover -i interface -r ippaddrrange
 
-tftp ipaddr port - tftp (udp) based file transfer protocol
+tftp [IP Address] port - tftp (udp) based file transfer protocol
 
 zenmap is a tool (GUI) for host discovery
 nmap -sn [ipaddressrange] allows host discovery  too
-nmap -p 21 --script vuln [ipaddress] runs a basic vuln scan
-nmap -sV --script=banner [ipaddress] grabs banners of the services  
-nmap -T4 -PA -sC -sV -p 1-1000 [ipaddress] -oX outputfile
+nmap -p 21 --script vuln [IP Address] runs a basic vuln scan
+nmap -sV --script=banner [IP Address] grabs banners of the services  
+nmap -T4 -PA -sC -sV -p 1-1000 [IP Address] -oX outputfile
 nmap scripts can be found in - **/usr/share/nmap/scripts/**  
 Learn more about nmap here - nmap.org/book/
 
@@ -127,8 +131,7 @@ metasploit - scanner/smb/smb_login
 hydra - hydra -l username -P file.txt ipaddr smb
 
 ### FTP
-
-- ftp ipaddr
+- ftp [IP]
 - hydra -L usernamelist -P passwordlist ipaddr ftp
 - nmap ipaddr --script ftp-brute --script-args userdb=file -p 21
 
@@ -136,8 +139,7 @@ hydra - hydra -l username -P file.txt ipaddr smb
         nmap ipaddr -p 21 --script ftp-anon
 - metasploit - auxiliaryscanner/ftp/ftp-version, auxiliary/scanner/ftp/ftp_login, auxiliary/scanner/ftp/anonymous
 
-### SSH
-
+### SSH Commands
 - ssh root@ipaddr
 - nc ipaddr 22
 - nmap ipaddr -p 22 --script ssh2-enum-algos
@@ -190,7 +192,6 @@ nmap -p 1433 --script ms-sql-query --script-args  mssql.username=admin,mssql.pas
 * * *
 
 ### SMTP
-
 metasploit - auxiliary/scanner/smtp/smtp_version, auxiliary/scanner/smtp/smtp_enum
 nmap -sV -script banner 192.80.153.3
 
