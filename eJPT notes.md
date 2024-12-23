@@ -3,56 +3,51 @@ eLearnSecurity Junior Penetration Tester/eJPT | INE = eLearnSecurity lol
 <br> This guy's notes - https://github.com/saran-gintoki/eJPT-Notes/
 <br> https://www.kali.org/get-kali/#kali-installer-images
 
-# 1 - Assessment Methodologies 
-## Locate endpoints on a network 
-Passive Reconnaisance Vs. Active Reconnassiance is self-explanatory now
+# 1 - Assessment Methodologies - Information Gathering
+## Passive Information Gathering
+### Website Recon & Footprinting
+Identifying the scope of your test can be done via passive/active reconnaissance  
 <br> whatis [Command] | gives a short description of a command
-### Passive Information Gathering 
+<br> host website.com | Does a DNS Lookup 
+
+**Robots and sitemap**
 <br> A robots.txt file contains a list of directories that AREN'T indexed by search engines
 <br> Example: https://hackersploit.org/robots.txt
 <br> A sitemap.xml file contains a list of directories that ARE indexed by search engines
-<br> Example: https://hackersploit.org/sitemap_index.xml
-<br> whois enumerations works via blah
-<br> host website.com | Does a DNS Lookup 
+<br> Example: https://hackersploit.org/sitemap.xml 
+<br> Alts: author-sitemap, post-sitemap, page-sitemap, category-sitemap (some may have more info)
 
+**Tools / web technology identifiers**
+<br> Wappalyzer | Firefox add-on cloud-based tool that identifies the technologies used to build websites. 
+<br> Builtwith | Firefox add-on that does the same thing
+<br> whatweb | Kali Tool/Command that does same thing
+<br> Httrack | Firefox Add-on Website copier that downloads websites to a local directory
+
+### Whois enumeration
+<br> whois website.com | Does enumeration on website and finds overall info
+
+### Website Footprinting With Netcraft
 <br> netcraft is used to find out what technologies are used by a website | https://sitereport.netcraft.com/
-<br> Sublist3r can be used to perform a subdomain brute force. | https://github.com/aboul3la/Sublist3r
 
-## Identify open ports and services on a target 
-
-## Identify operating system of a target Extract company information from public sources 
-
-## Gather email addresses from public sources Gather technical information from public sources 
-
-## Identify vulnerabilities in services 
-
-## Evaluate information and criticality or impact of vulnerabilities
-
-### Information Gathering
-<br> Tools / web technology identifiers
-<br> Wappalyzer is a cloud-based tool that identifies the technologies used to build websites. It is  the browser plug in built with (recommended)
-<br> whatweb | Kali Tool that provides info about the tech used on the website
-<br> Httrack | Website copier that downloads websites to a local directory
-<br> Builtwith is the same
-### DNS footprinting
-<br> dnsrecon is a tool in kali for dns footprinting
+### DNS Recon or DNS footprinting
+<br> dnsrecon Kali tool for dns footprinting
 <br> dnsrecon -d website.com | or dnsdumpster.com (better visual output)  
 <br> dnsenum is another tool in kali that performs zonetransfers as well.
-
 - sudo dnsenum —enum -f “/usr/share/dnsenum/dns.txt” salesforce.com
 
+<br> Sublist3r can be used to perform a subdomain brute force or  sub domain enum. | https://github.com/aboul3la/Sublist3r
+
+
 dig website.com | Kali tool that's same as host but more raw/detailed and can perform zone transfer
-fierce | Kail tool that is a DNS scanner to help locate non-contiguous IP space and hostnames against specified domains.
+fierce | Kail tool that's a DNS scanner to help locate non-contiguous IP space and hostnames against specified domains.
 nslookup website.com | same as host (maybe)
-
-zonetransfer.me -- teaches about domain
-
-/etc/hosts file - consists of the ip and domain names  
-usr/share/dnsenum/dns.txt - contains a list of dns names to bruteforce
 
 wafwoof (enable security - github) - web firewall fingerprint
 
-sublister - sub domain enum
+zonetransfer.me -- teaches about domain
+
+/etc/hosts file consists of the ip and domain names  
+usr/share/dnsenum/dns.txt has a list of dns names to bruteforce
 
 Google dorking or Google hacking is a technique using sophisticated search queries to uncover information on the internet not easily accessible through typical search queries  
 waybackmachine  
@@ -60,11 +55,19 @@ google hacking database
 theHarvester  
 spyse - search engine  
 haveibeenpwned.com 
+
+# SUB-OBJECTIIVES
+## Locate endpoints on a network 
+## Identify open ports and services on a target 
+## Identify operating system of a target Extract company information from public sources 
+## Gather email addresses from public sources Gather technical information from public sources 
+## Identify vulnerabilities in services 
+## Evaluate information and criticality or impact of vulnerabilities
+
 The Whois lookup utility can be used to identify the nameservers of a particular domain.
 
 ## Footprinting and Scanning
-Identifying the scope of your test can be done via passive/active reconnaissance  
-    watch network traffic  
+watch network traffic  
 ARP resolves ip to mac  
 <br> arp-scan -I interface -g  
 <br> ICMP is for ping and traceroute 
@@ -150,7 +153,6 @@ hydra - hydra -l username -P file.txt ipaddr smb
 - metasploit -- auxiliary/scanner/ssh/ssh_login, auxiliary/scanner/ssh/ssh_version, auxiliary/scanner/ssh/ssh_enumusers
 
 ### HTTP
-
 - whatweb ippaddr
 - http ipaddr
 - dirb http://ipaddr
@@ -163,8 +165,6 @@ hydra - hydra -l username -P file.txt ipaddr smb
 - wget 'http://ipaddr/index'
 - browsh, lynx - to view the website (old tools)
 - robots.txt
-
-* * *
 
 ### SQL 3306
 
@@ -189,41 +189,33 @@ nmap -p 1433 --script ms-sql-query --script-args  mssql.username=admin,mssql.pas
 **mysql** -- scanner/mysql/mysql_version, scanner/mysql/mysql_writable_dirs, scanner/mysql/mysql_hashdump, mysql-query, auxiliary/scanner/mysql/mysql_file_enum, scanner/mysql/mysql_login, admin/mysql/mysql_enum, {admin/mysql/mysql_sql - used to run sql queries}, {scanner/mysql/mysql_schemadump - can tell what tables are there under the databases}
 **mssql** -- auxilary/scanner/mssql/mssql_login, auxilary/admin/mssql/mssql_enum, auxilary/admin/mssql/mssql_enum_sql_logins, auxilary/admin/mssql/mssql_exec, auxilary/admin/mssql/mssql_enum_domain_accounts
 
-* * *
-
 ### SMTP
 metasploit - auxiliary/scanner/smtp/smtp_version, auxiliary/scanner/smtp/smtp_enum
 nmap -sV -script banner 192.80.153.3
 
 # 2 - Host and Networking Auditing
+
+# SUB-OBJECTIIVES
 ## Compile information from files on target
-
 ## Enumerate network information from files on target
-
 ## Enumerate system information on target
-
 ## Gather user account information on target
-
 ## Transfer files to and from target
-
 ## Gather hash/password information from target
 
 # 3 - Host and Network Penetration Testing
+
+# SUB-OBJECTIIVES
 ## Identify and modify exploits
-
 ## Conduct exploitation with metasploit
-
 ## Demonstrate pivoting by adding a route and by port forwarding
-
 ## Conduct brute-force password attacks and hash cracking
 
 # 4 - Web Application Penetration Testing
+
+# SUB-OBJECTIIVES
 ## Identify vulnerabilities in web applications
-
 ## Locate hidden file and directories
-
 ## Conduct brute-force login attack
-
 ## Conduct web application reconnaissance
-
 ## Gobuster -u [url] -w log.txt dir
