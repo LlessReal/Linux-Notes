@@ -10,7 +10,7 @@ Identifying the scope of your test can be done via passive/active reconnaissance
 <br> whatis [Command] | gives a short description of a command
 <br> host website.com | Does a DNS Lookup 
 
-**Robots and sitemap**
+**robots.txt and sitemap.xml**
 <br> A robots.txt file contains a list of directories that AREN'T indexed by search engines
 <br> Example: https://hackersploit.org/robots.txt
 <br> A sitemap.xml file contains a list of directories that ARE indexed by search engines
@@ -25,26 +25,33 @@ Identifying the scope of your test can be done via passive/active reconnaissance
 
 ### Whois enumeration
 <br> whois website.com | Does enumeration on website and finds overall info
+<br> The who.is website also exists
+<br> zonetransfer.me -- teaches about domain
 
 ### Website Footprinting With Netcraft
-<br> netcraft is used to find out what technologies are used by a website | https://sitereport.netcraft.com/
+<br> netcraft | used to find out what technologies are used by a website https://sitereport.netcraft.com/
 
 ### DNS Recon or DNS footprinting
-<br> dnsrecon Kali tool for dns footprinting
-<br> dnsrecon -d website.com | or dnsdumpster.com (better visual output)  
-<br> dnsenum is another tool in kali that performs zonetransfers as well.
-- sudo dnsenum —enum -f “/usr/share/dnsenum/dns.txt” salesforce.com
+<br> dnsrecon is a Kali tool for dns footprinting
+<br> dnsrecon -d website.com | specifies domain name and shows info like records 
+<br> The dnsdumpster.com website gives better visual output when typing domains  
+<br> dnsenum is a Kali tool that performs zonetransfers as well.
+<br> sudo dnsenum —enum -f “/usr/share/dnsenum/dns.txt” salesforce.com
 
-<br> Sublist3r can be used to perform a subdomain brute force or  sub domain enum. | https://github.com/aboul3la/Sublist3r
+### wafw00f
+<br> wafw00f is a Web Application Firewall Fingerprinting Toolkit
+<br> wafw00f website.com | Checks the WAF protection on a website
+<br> wafw00f -l | Shows a list of WAFs that can be detected by wafw00f (enable security - github)
 
+### Sublist3r
+<br> Install: sudo apt install sublist3r
+<br> Sublist3r is used to perform a subdomain brute force or enumeration. | https://github.com/aboul3la/Sublist3r
+<br> sublist3r -d website.com | Runs a search on all search engines
+<br> sublist3r -d website.com -e google,yahoo | Does only google and yahoo (can also do netcraft and dnsdumper)
 
 dig website.com | Kali tool that's same as host but more raw/detailed and can perform zone transfer
 fierce | Kail tool that's a DNS scanner to help locate non-contiguous IP space and hostnames against specified domains.
 nslookup website.com | same as host (maybe)
-
-wafwoof (enable security - github) - web firewall fingerprint
-
-zonetransfer.me -- teaches about domain
 
 /etc/hosts file consists of the ip and domain names  
 usr/share/dnsenum/dns.txt has a list of dns names to bruteforce
@@ -59,8 +66,10 @@ haveibeenpwned.com
 # SUB-OBJECTIIVES
 ## Locate endpoints on a network 
 ## Identify open ports and services on a target 
-## Identify operating system of a target Extract company information from public sources 
-## Gather email addresses from public sources Gather technical information from public sources 
+## Identify operating system of a target 
+## Extract company information from public sources 
+## Gather email addresses from public sources 
+## Gather technical information from public sources 
 ## Identify vulnerabilities in services 
 ## Evaluate information and criticality or impact of vulnerabilities
 
