@@ -9,8 +9,7 @@ eLearnSecurity Junior Penetration Tester/eJPT | INE = eLearnSecurity lol
 Identifying the scope of your test can be done via passive/active reconnaissance  
 <br> whatis [Command] | gives a short description of a command
 <br> host website.com | Does a DNS Lookup 
-
-**robots.txt and sitemap.xml**
+**<br> robots.txt and sitemap.xml**
 <br> A robots.txt file contains a list of directories that AREN'T indexed by search engines
 <br> Example: https://hackersploit.org/robots.txt
 <br> A sitemap.xml file contains a list of directories that ARE indexed by search engines
@@ -46,19 +45,30 @@ Identifying the scope of your test can be done via passive/active reconnaissance
 ### Sublist3r
 <br> Install: sudo apt install sublist3r
 <br> Sublist3r is used to perform a subdomain brute force or enumeration. | https://github.com/aboul3la/Sublist3r
-<br> sublist3r -d website.com | Runs a search on all search engines
-<br> sublist3r -d website.com -e google,yahoo | Does only google and yahoo (can also do netcraft and dnsdumper)
+<br> sublist3r -d columbusstate.edu | Runs a search on all search engines
+<br> sublist3r -d columbusstate.edu -e google,yahoo | Does only google and yahoo (can also do netcraft and dnsdumper)
 
-dig website.com | Kali tool that's same as host but more raw/detailed and can perform zone transfer
+dig columbusstate.edu | Kali tool that's same as host but more raw/detailed and can perform zone transfer
 fierce | Kail tool that's a DNS scanner to help locate non-contiguous IP space and hostnames against specified domains.
 nslookup website.com | same as host (maybe)
 
 /etc/hosts file consists of the ip and domain names  
 usr/share/dnsenum/dns.txt has a list of dns names to bruteforce
 
-Google dorking or Google hacking is a technique using sophisticated search queries to uncover information on the internet not easily accessible through typical search queries  
-waybackmachine  
-google hacking database  
+### Google Dorks/Hacking
+<br> Google dorking is a technique using sophisticated search queries to uncover info on the internet not easily accessible through typical search queries  
+
+**Searches**
+<br> site:ine.com | Limits searches to only ine.com along with subdomains for it
+<br> site:ine.com inurl:admin | Shows results with url keywords "admin" , forum would do forums, etc
+<br> site:*ine.com | Limits results to subdomains, ofc with admin will show admin sites
+<br> site:*ine.com filetype:pdf | Shows all subdomains with pdf files (can put keywords like marketing, sales, crm, etc)
+<br> site:ine.com instructors | Shows with instructors keywords
+<br> intitle: index of | 
+<br> cache:ine.com | Shows google web cache for ine.com
+
+Wayback Machine website also stores old versions of a website (Putting ine.com allows you to see all the versions of the site)
+google hacking database has sets of searches for finding juiicy info 
 theHarvester  
 spyse - search engine  
 haveibeenpwned.com 
@@ -72,8 +82,6 @@ haveibeenpwned.com
 ## Gather technical information from public sources 
 ## Identify vulnerabilities in services 
 ## Evaluate information and criticality or impact of vulnerabilities
-
-The Whois lookup utility can be used to identify the nameservers of a particular domain.
 
 ## Footprinting and Scanning
 watch network traffic  
